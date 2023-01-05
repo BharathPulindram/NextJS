@@ -55,5 +55,10 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 If fallback is true
 if router.isFallback is not used you will get an error
-i.e If fallback is set to true, the paths that have not been generated at build time will not request 404 page. Instead next js will serve fallback version of page on first request to such a path.
+i.e If fallback is set to true, the paths that have not been generated at build time will not result 404 page. Instead next js will serve fallback version of page on first request to such a path.
 If you want 404 page for data that is not in the list use notFound logic.
+
+If fallback is blocking
+i.e If fallback is set to blocking, the paths that have not been generated at build time will not result 404 page. Instead on first request, next js will render page on server and return generated html.
+When thats done, the browser receives the HTML for generated path. From users perspective it eill transition frommbrowser is requesting the page to full page is loaded. There is no flash of loading/fallback state.
+Takes much time for loading page.
