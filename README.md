@@ -44,5 +44,21 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ### Static Generation
 
-getStaticProps runs only on server side not on client side. It will run on every request.
-getStaticProps is allowed only in page folder and not in regular component. It is used only for pre-rendering and not client side data fetching.
+- getStaticProps runs only on server side not on client side. It will run on every request.
+  getStaticProps is allowed only in page folder and not in regular component. It is used only for pre-rendering and not client side data fetching.
+  (video 21)
+- When a page with getStaticProps is pre-rendered at build time, in addition to the page HTML file, Nextjs generates json file holding the result of running getstaticprops. The JSON file will be used in client side routing through next/link or next/router.
+
+- getStaticPaths fallback:
+  For example you have list of 10 items and you navigate to 11th or someother item by dynamic SSG then, fallback false throws 404 page.
+  i.e If fallback is set to false, then any paths not returned by getstaticpaths will result in 404 page.
+
+If fallback is true
+if router.isFallback is not used you will get an error
+i.e If fallback is set to true, the paths that have not been generated at build time will not result 404 page. Instead next js will serve fallback version of page on first request to such a path.
+If you want 404 page for data that is not in the list use notFound logic.
+
+If fallback is blocking
+i.e If fallback is set to blocking, the paths that have not been generated at build time will not result 404 page. Instead on first request, next js will render page on server and return generated html.
+When thats done, the browser receives the HTML for generated path. From users perspective it eill transition frommbrowser is requesting the page to full page is loaded. There is no flash of loading/fallback state.
+Takes much time for loading page.

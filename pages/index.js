@@ -13,6 +13,7 @@ function Home() {
       <Link href="/blog">Blog</Link>
       <Link href="/product">Product</Link>
       <button onClick={handleClick}>Navigate To Product</button>
+      <Link href="/posts">Post</Link>
     </>
   );
 }
