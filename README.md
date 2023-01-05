@@ -66,3 +66,11 @@ Takes much time for loading page.
 #### Incremental Static Regeneration
 
 - revalidate static pages at particular time interval i.e after revalidate time
+
+### Server Side Rendering
+
+- getServerSideProps
+  Runs only on server side
+  The function will never run client side.
+  The code written getServerSideProps wont include in JS bundle that is sent to browser.
+  You can write server side code directly in getServerSideProps like accesing fs module or querying database etc inside it.
