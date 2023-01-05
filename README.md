@@ -48,3 +48,11 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
   getStaticProps is allowed only in page folder and not in regular component. It is used only for pre-rendering and not client side data fetching.
   (video 21)
 - When a page with getStaticProps is pre-rendered at build time, in addition to the page HTML file, Nextjs generates json file holding the result of running getstaticprops. The JSON file will be used in client side routing through next/link or next/router.
+
+- getStaticPaths fallback:
+  For example you have list of 10 items and you navigate to 11th or someother item by dynamic SSG then, fallback false throws 404 page.
+  i.e If fallback is set to false, then any paths not returned by getstaticpaths will result in 404 page.
+
+If fallback is true
+if router.isFallback is not used you will get an error
+i.e If fallback is set to true, the paths that have not been generated at build time will not request 404 page. Instead next js will serve fallback version of page on first request to such a path.

@@ -1,7 +1,13 @@
+import { useRouter } from "next/router";
 function Post({ post }) {
+  const router = useRouter();
+
+  if (router.isFallback) {
+    return <h1>Loading...</h1>;
+  }
   return (
     <>
-      <h1>Dynamic Post...</h1>
+      <h1>Dynamic Post Below :</h1>
       <h2>
         {post.Id} {post.title}
       </h2>
@@ -37,7 +43,7 @@ export async function getStaticPaths() {
         params: { postId: "3" },
       },
     ], */
-    fallback: false,
+    fallback: true,
   };
 }
 
