@@ -44,5 +44,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ### Static Generation
 
-getStaticProps runs only on server side not on client side. It will run on every request.
-getStaticProps is allowed only in page folder and not in regular component. It is used only for pre-rendering and not client side data fetching.
+- getStaticProps runs only on server side not on client side. It will run on every request.
+  getStaticProps is allowed only in page folder and not in regular component. It is used only for pre-rendering and not client side data fetching.
+  (video 21)
+- When a page with getStaticProps is pre-rendered at build time, in addition to the page HTML file, Nextjs generates json file holding the result of running getstaticprops. The JSON file will be used in client side routing through next/link or next/router.
