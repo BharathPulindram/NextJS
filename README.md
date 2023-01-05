@@ -62,3 +62,7 @@ If fallback is blocking
 i.e If fallback is set to blocking, the paths that have not been generated at build time will not result 404 page. Instead on first request, next js will render page on server and return generated html.
 When thats done, the browser receives the HTML for generated path. From users perspective it eill transition frommbrowser is requesting the page to full page is loaded. There is no flash of loading/fallback state.
 Takes much time for loading page.
+
+#### Incremental Static Regeneration
+
+- revalidate static pages at particular time interval i.e after revalidate time
