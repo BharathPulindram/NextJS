@@ -53,6 +53,11 @@ export async function getStaticProps(context) {
     `https://jsonplaceholder.typicode.com/posts/${params.postId}`
   );
   const data = await response.json();
+  if (!data.id) {
+    return {
+      notFound: true,
+    };
+  }
   return {
     props: {
       post: data,

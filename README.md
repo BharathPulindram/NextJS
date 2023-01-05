@@ -56,3 +56,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 If fallback is true
 if router.isFallback is not used you will get an error
 i.e If fallback is set to true, the paths that have not been generated at build time will not request 404 page. Instead next js will serve fallback version of page on first request to such a path.
+If you want 404 page for data that is not in the list use notFound logic.
