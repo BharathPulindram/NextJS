@@ -70,7 +70,8 @@ Takes much time for loading page.
 ### Server Side Rendering
 
 - getServerSideProps
-  Runs only on server side
+  Runs only on server side.
   The function will never run client side.
   The code written getServerSideProps wont include in JS bundle that is sent to browser.
   You can write server side code directly in getServerSideProps like accesing fs module or querying database etc inside it.
+  - getServerSideProps is allowed only in page folder and not in regular component. It is used only for pre-rendering and not client side data fetching. It will run at request time
