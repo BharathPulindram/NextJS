@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 function Post({ post }) {
   const router = useRouter();
-
   if (router.isFallback) {
     return <h1>Loading...</h1>;
   }
@@ -62,5 +61,6 @@ export async function getStaticProps(context) {
     props: {
       post: data,
     },
+    revalidate: 10,
   };
 }
