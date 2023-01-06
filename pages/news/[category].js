@@ -17,7 +17,10 @@ function ArticleListByCategory({ articles, category }) {
 export default ArticleListByCategory;
 
 export async function getServerSideProps(context) {
-  const { params } = context;
+  const { params, req, res, query } = context;
+  console.log(req.headers.cookie);
+  console.log(query);
+  res.setHeader("Set-Cookie", ["name=Bharath"]);
   const { category } = params;
   const response = await fetch(
     `http://localhost:3000/api/articles?category=${category}`
