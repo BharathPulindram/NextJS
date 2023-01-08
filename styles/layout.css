@@ -1,0 +1,15 @@
+.layout-header {
+  background-color: #264653;
+  color: rgb(185, 105, 25);
+  font-size: 30px;
+  text-align: center;
+  padding: 30px;
+}
+
+.layout-footer {
+  background-color: #264653;
+  color: rgb(128, 69, 10);
+  font-size: 30px;
+  text-align: center;
+  padding: 20px;
+}
