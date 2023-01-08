@@ -14,6 +14,9 @@ import Footer from '../components/Footer';
 import type { AppProps } from 'next/app'
 
 export default function App({ Component, pageProps }: AppProps) {
+  if(Component.getLayoutFun){
+    return Component.getLayoutFun(<Component {...pageProps} />)
+  }
   return    (
       <>
       <Header/>

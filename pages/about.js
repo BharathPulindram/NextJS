@@ -5,3 +5,7 @@ function About() {
 }
 
 export default About;
+
+About.getLayoutFun = function PageLayout(page) {
+  return <>{page}</>;
+};
