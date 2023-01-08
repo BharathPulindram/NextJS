@@ -12,6 +12,7 @@ import Footer from '../components/Footer';
 } */
 
 import type { AppProps } from 'next/app'
+import Head from 'next/head';
 
 export default function App({ Component, pageProps }: AppProps) {
   if(Component.getLayoutFun){
@@ -19,6 +20,10 @@ export default function App({ Component, pageProps }: AppProps) {
   }
   return    (
       <>
+      <Head>
+        <title>Bharath</title>
+        <meta name="description" content="next js course" />
+      </Head>
       <Header/>
       <Component {...pageProps} />
       <Footer/>
