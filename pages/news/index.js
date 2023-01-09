@@ -26,7 +26,11 @@ export async function getServerSideProps() {
  */
 
 function News({ data }) {
-  return <h1>{data}</h1>;
+  return (
+    <h1>
+      {data} - {process.env.NEXT_PUBLIC_ANALYTICS_ID}
+    </h1>
+  );
 }
 
 export default News;
