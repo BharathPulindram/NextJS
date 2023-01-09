@@ -32,6 +32,9 @@ function News({ data }) {
 export default News;
 
 export async function getStaticProps(context) {
+  const user = process.env.DB_USER;
+  const password = process.env.DB_PASSWORD;
+  console.log("username:", user + " password:", password);
   console.log(context.previewData);
   return {
     props: {

@@ -17,6 +17,8 @@ function ArticleListByCategory({ articles, category }) {
 export default ArticleListByCategory;
 
 export async function getServerSideProps(context) {
+  const user = process.env.DB_USER;
+  const password = process.env.DB_PASSWORD;
   const { params, req, res, query } = context;
   console.log(req.headers.cookie);
   console.log(query);
