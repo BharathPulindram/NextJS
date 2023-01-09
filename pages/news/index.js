@@ -1,4 +1,4 @@
-function NewsList({ articles }) {
+/* function NewsList({ articles }) {
   return (
     <>
       <h1>News List</h1>
@@ -20,6 +20,23 @@ export async function getServerSideProps() {
   return {
     props: {
       articles: data,
+    },
+  };
+}
+ */
+
+function News({ data }) {
+  return <h1>{data}</h1>;
+}
+
+export default News;
+
+export async function getStaticProps(context) {
+  return {
+    props: {
+      data: context.preview
+        ? "List of draft articles!!"
+        : "List of published articles!!",
     },
   };
 }
