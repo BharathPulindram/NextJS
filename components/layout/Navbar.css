@@ -1,0 +1,36 @@
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+li {
+  margin: 5px;
+}
+
+h2,
+h3,
+a {
+  color: #34495e;
+}
+
+a {
+  text-decoration: none;
+}
+
+.logo {
+  margin: 0;
+  font-size: 1.45em;
+}
+.header {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  background-color: rgb(198, 212, 214);
+}
+
+.main-nav {
+  display: flex;
+  margin-top: 5px;
+  padding: 10px;
+  justify-content: space-around;
+}
