@@ -32,6 +32,7 @@ function News({ data }) {
 export default News;
 
 export async function getStaticProps(context) {
+  console.log(context.previewData);
   return {
     props: {
       data: context.preview
