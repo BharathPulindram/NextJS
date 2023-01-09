@@ -2,8 +2,8 @@
 import '/styles/globals.css';
 //import {ThemeProvider} from 'styled-components';
 import '../styles/layout.css'
-import Header from '@/layout/Header';
-import Footer from '@/layout/Footer';
+import Header from 'components/layout/Header';
+import Footer from 'components/layout/Footer';
 
 /* const theme = {
   colors:{
