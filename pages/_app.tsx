@@ -4,6 +4,8 @@ import '/styles/globals.css';
 import '../styles/layout.css'
 import Header from '@/layout/Header';
 import Footer from '@/layout/Footer';
+import Navbar from '@/layout/Navbar';
+import '@/layout/Navbar.css'
 
 /* const theme = {
   colors:{
@@ -20,13 +22,14 @@ export default function App({ Component, pageProps }: AppProps) {
   }
   return    (
       <>
-      <Head>
+     {/*  <Head>
         <title>Bharath</title>
         <meta name="description" content="next js course" />
       </Head>
-      <Header/>
+      <Header/> */}
+      <Navbar />
       <Component {...pageProps} />
-      <Footer/>
+      {/* <Footer/> */}
       </>
     )
     {/* <ThemeProvider theme={theme}>
