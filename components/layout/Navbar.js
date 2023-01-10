@@ -1,7 +1,9 @@
 import Link from "next/link";
-//import { signIn, signOut } from "next-auth/client";
+import { useState } from "react";
+//import { signIn, signOut, useSession } from "next-auth/client";
 
 function Navbar() {
+  const [session, loading] = useSession();
   return (
     <div>
       <nav className="header">
@@ -18,12 +20,43 @@ function Navbar() {
           <li>
             <Link href="/news">News</Link>
           </li>
+          {/* Dynamically rendering signIn/signOut based on condition */}
+          {/* {
+            !loading && !session && (
+              <li>
+            <Link
+              href="/api/auth/signin"
+              onClick={(e) => {
+                e.preventDefault();
+                //signIn();
+              }}
+            >
+              Sign In
+            </Link>
+          </li>
+            )
+          }
+          {
+            session && (
+              <li>
+            <Link
+              href="/api/auth/signin"
+              onClick={(e) => {
+                e.preventDefault();
+                //signIn();
+              }}
+            >
+              Sign In
+            </Link>
+          </li>
+            )
+          } */}
           <li>
             <Link
               href="/api/auth/signin"
               onClick={(e) => {
                 e.preventDefault();
-                signIn();
+                //signIn();
               }}
             >
               Sign In
@@ -34,7 +67,7 @@ function Navbar() {
               href="/api/auth/signin"
               onClick={(e) => {
                 e.preventDefault();
-                signOut();
+                //signOut();
               }}
             >
               Sign Out
